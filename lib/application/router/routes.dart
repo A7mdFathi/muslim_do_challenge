@@ -1,4 +1,3 @@
-import 'dart:js';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -12,7 +11,7 @@ const String detailsRouteName = 'details';
 const String homeRouteName = 'home';
 
 @injectable
-class MyRouter {
+class MyRouter with ChangeNotifier{
   MyRouter();
 
   final router = GoRouter(
