@@ -7,6 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:muslim_do_challenge/application/muslim_do_app.dart';
 
 import 'package:muslim_do_challenge/main.dart';
 

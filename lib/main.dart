@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:muslim_do_challenge/application/utils/bloc_observer.dart';
 import 'package:muslim_do_challenge/presentation/pages/home_page/home_page.dart';
 
+import 'application/muslim_do_app.dart';
 import 'application/utils/app_logger.dart';
 import 'dependencies/dependency_init.dart';
 
@@ -28,20 +29,3 @@ Future<void> main() async {
   );
 }
 
-class MuslimDoApp extends StatelessWidget {
-  const MuslimDoApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(360, 690),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (context, child) {
-        return const MaterialApp(
-          home: HomePage(),
-        );
-      },
-    );
-  }
-}
