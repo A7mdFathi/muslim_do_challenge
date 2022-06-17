@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../presentation/pages/home_page/home_page.dart';
+import 'package:muslim_do_challenge/application/router/routes.dart';
+import 'package:provider/provider.dart';
 
 class MuslimDoApp extends StatelessWidget {
   const MuslimDoApp({Key? key}) : super(key: key);
@@ -14,8 +13,15 @@ class MuslimDoApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return const MaterialApp(
-          home: HomePage(),
+        final router = context.read<MyRouter>().router;
+        return MaterialApp.router(
+          routeInformationParser: router.routeInformationParser,
+          routerDelegate: router.routerDelegate,
+          debugShowCheckedModeBanner: false,
+          title: 'Muslim do Challenge',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
         );
       },
     );
