@@ -54,6 +54,12 @@ dependencies:
   #UI
   grouped_list: ^5.1.1
 
+  #navigation
+  go_router: ^4.0.0
+
+  #responsive
+  flutter_screenutil: ^5.5.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
