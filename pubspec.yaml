@@ -60,6 +60,9 @@ dependencies:
   #responsive
   flutter_screenutil: ^5.5.2
 
+  #functional programming
+  dartz: ^0.10.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
