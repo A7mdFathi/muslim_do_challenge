@@ -12,6 +12,7 @@ Client _$ClientFromJson(Map<String, dynamic> json) => Client(
       email: json['email'] as String?,
       gender: json['gender'] as String?,
       status: json['status'] as String?,
+      clientColor: json['clientColor'] as int?,
     );
 
 Map<String, dynamic> _$ClientToJson(Client instance) => <String, dynamic>{
@@ -20,4 +21,5 @@ Map<String, dynamic> _$ClientToJson(Client instance) => <String, dynamic>{
       'email': instance.email,
       'gender': instance.gender,
       'status': instance.status,
+      'clientColor': instance.clientColor,
     };

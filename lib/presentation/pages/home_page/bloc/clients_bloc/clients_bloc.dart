@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:muslim_do_challenge/domain/usecases/get_clients_use_case.dart';
 
@@ -27,9 +30,16 @@ class ClientsBloc extends Bloc<ClientsEvent, ClientsState> {
     result.fold(
       (left) => emit(ClientsFailure(left)),
       (right) {
-        page = right.meta?.pagination?.page ?? page;
+        page = (right.meta?.pagination?.page ?? page) + 1;
         hasReachMax = page >= (right.meta?.pagination?.pages ?? page);
-        clients.addAll(right.data ?? []);
+        final clientsWith = right.data
+            ?.map((e) => e.copyWith(
+                clientColor: Colors
+                    .primaries[Random().nextInt(Colors.primaries.length)]
+                    .value))
+            .toList();
+
+        clients.addAll(clientsWith ?? []);
         emit(ClientsLoaded(clients));
       },
     );

@@ -5,6 +5,7 @@ import 'package:injectable/injectable.dart';
 import 'package:muslim_do_challenge/presentation/pages/details_page/details_page.dart';
 import 'package:muslim_do_challenge/presentation/pages/home_page/home_page.dart';
 
+import '../../domain/entities/client/client.dart';
 import '../../presentation/pages/error_page.dart';
 
 const String detailsRouteName = 'details';
@@ -36,7 +37,7 @@ class MyRouter with ChangeNotifier{
         path: '/details',
         pageBuilder: (context, state) => MaterialPage<void>(
           key: state.pageKey,
-          child: const DetailsPage(),
+          child:  DetailsPage(client: (state.extra! as Client)),
         ),
       ),
     ],

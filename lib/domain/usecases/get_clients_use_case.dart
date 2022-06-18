@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:dartz/dartz.dart';
+import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:muslim_do_challenge/domain/entities/clients/clients.dart';
 import 'package:muslim_do_challenge/domain/repositories/clients_repository.dart';
